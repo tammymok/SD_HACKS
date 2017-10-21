@@ -19,18 +19,18 @@ public class RandomPosition : MonoBehaviour
 
     }
 
-    public static Vector3 getRandomPosition()
+    public Vector3 getRandomPosition()
     {
-        return randomPosition;
+        return randomPositionInSpawnZone();
     }
 
-    void randomPositionInSpawnZone()
+    Vector3 randomPositionInSpawnZone()
     {
         Vector3 randomPositionInSpawnZone = SpawnZone.transform.position;
         Vector3 zoneScale = SpawnZone.transform.lossyScale;
         randomPositionInSpawnZone.x += zoneScale.x * (Random.value - 0.5f);
         randomPositionInSpawnZone.y += zoneScale.y * (Random.value - 0.5f);
         randomPositionInSpawnZone.z += zoneScale.z * (Random.value - 0.5f);
-        randomPosition = randomPositionInSpawnZone;
+        return randomPositionInSpawnZone;
     }
 }

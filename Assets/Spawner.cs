@@ -18,27 +18,27 @@ public class Spawner : MonoBehaviour {
 	void Update () {
         timeCount += Time.deltaTime;
         
-        if (timeCount > 5) {
-
-            
+        if (timeCount > 5) { 
+            RandomPosition pos = this.gameObject.GetComponent<RandomPosition>();
             for (int i = difficultyJelly; i > 0; i--) {
-                Vector3 randomPosition = RandomPosition.getRandomPosition();
-                GameObject jellyBellyFishy = Instantiate(Jellyfish, randomPosition, Quaternion.identity);
-                jellyfishbehavior jellyfish = jellyBellyFishy.GetComponent<jellyfishbehavior>();
-                jellyfish.setJellyfishStartingPosition(randomPosition);
+                Vector3 randomPosition = pos.getRandomPosition();
+                Instantiate(Jellyfish, randomPosition, Quaternion.identity);
             }
             for (int i = difficultyTrash; i > 0; i--) {
-
-                Instantiate(Trashbag, getRandomPositionInSpawnZone(), Quaternion.identity);
+                Vector3 randomPosition = pos.getRandomPosition();
+                Instantiate(Trashbag, randomPosition, Quaternion.identity);
+                /*               GameObject trash = Instantiate(Trashbag, randomPosition, Quaternion.identity);
+                               TrashBag garbage = trash.GetComponent<TrashBag>();
+                               garbage.setTrashStartingPosition(randomPosition);*/
             }
             timeCount -= 5;
 
             difficultyUpdated++;
-            if (difficultyUpdated % 4 == 0)
+            if (difficultyUpdated % 7 == 0)
             {
                 difficultyJelly++;
             }
-            if (difficultyUpdated % 3 == 0)
+            if (difficultyUpdated % 5 == 0)
             {
                 difficultyTrash++;
             }
