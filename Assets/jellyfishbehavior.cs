@@ -5,11 +5,16 @@ using UnityEngine.EventSystems;
 
 public class jellyfishbehavior : MonoBehaviour {
     Vector3 velocity;
-    Animator anim;
+    bool everyOtherJelly = false;
 
     // Use this for initialization
-    void Start () {
-        velocity = velocityJellyNTrash.randomVelocity();//new Vector3(0, 0, 1);
+    void Start() {
+        if (everyOtherJelly == false) { 
+            velocity = velocityJellyNTrash.randomVelocity();
+        }
+        else {
+            velocity = new Vector3(0, 0, 1);
+        }
     }
 
 	// Update is called once per frame

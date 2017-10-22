@@ -225,7 +225,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Eating.cs" />
+    <Compile Include="Assets\HealthBar.cs" />
     <Compile Include="Assets\jellyfishbehavior.cs" />
+    <Compile Include="Assets\PlayerHealth.cs" />
     <Compile Include="Assets\RandomPosition.cs" />
     <Compile Include="Assets\Spawner.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
@@ -330,8 +333,8 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
-    <Compile Include="Assets\Trash.cs" />
     <Compile Include="Assets\TrashBag.cs" />
+    <Compile Include="Assets\velocityJellyNTrash.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\Arrow.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowNotch.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowSpawner.cs" />

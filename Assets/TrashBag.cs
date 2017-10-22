@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 
 public class TrashBag : MonoBehaviour {
-    public Vector3 velocity = velocityJellyNTrash.randomVelocity();//new Vector3(0, 0, .5f);
-
+    public Vector3 velocity;
+    bool everyOtherJelly = false;
 
     //Use these Vectors for moving Rigidbody components
 
@@ -14,7 +14,12 @@ public class TrashBag : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        
+        if (everyOtherJelly == false) {
+            velocity = velocityJellyNTrash.randomVelocity();
+        }
+        else{
+            velocity = new Vector3(0, 0, 1);
+        }
     }
 
     // Update is called once per frame

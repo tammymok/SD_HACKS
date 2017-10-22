@@ -39,11 +39,11 @@ public class Spawner : MonoBehaviour {
             timeCount -= 5;
 
             difficultyUpdated++;
-            if (difficultyUpdated % 6 == 0)
+            if (difficultyUpdated % 4 == 0)
             {
                 difficultyJelly++;
             }
-            if (difficultyUpdated % 5 == 0)
+            if (difficultyUpdated % 3 == 0)
             {
                 difficultyTrash++;
             }
