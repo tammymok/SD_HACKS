@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 
 public class TrashBag : MonoBehaviour {
-    public Vector3 velocity = new Vector3(0, 0, .5f);
+    public Vector3 velocity = velocityJellyNTrash.randomVelocity();//new Vector3(0, 0, .5f);
 
 
     //Use these Vectors for moving Rigidbody components

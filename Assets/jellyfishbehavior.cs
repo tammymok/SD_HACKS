@@ -9,7 +9,7 @@ public class jellyfishbehavior : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        velocity = new Vector3(0, 0, 1);
+        velocity = velocityJellyNTrash.randomVelocity();//new Vector3(0, 0, 1);
     }
 
 	// Update is called once per frame
