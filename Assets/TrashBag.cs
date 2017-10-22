@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 
 public class TrashBag : MonoBehaviour {
-    Vector3 velocity;
+    public Vector3 velocity = new Vector3(0, 0, .5f);
 
 
     //Use these Vectors for moving Rigidbody components
@@ -14,7 +14,7 @@ public class TrashBag : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        velocity = new Vector3(0, 0, 1);
+        
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class TrashBag : MonoBehaviour {
         Debug.Log("going into trigger exit, trash");
         if (collision.gameObject.name.Equals("BattleZone"))
         {
-            DestroyObject(this);
+            Destroy(this.gameObject);
         }
     }
 }

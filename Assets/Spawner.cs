@@ -10,15 +10,20 @@ public class Spawner : MonoBehaviour {
     public int difficultyTrash = 1;
     private float timeCount = 0;
     private int difficultyUpdated = 0;
+    public static bool isSpawning = true;
     // Use this for initialization
     void Start() {
     }
 	
+    public static void setIsSpawning(bool a)
+    {
+        isSpawning = a;
+    }
 	// Update is called once per frame
 	void Update () {
         timeCount += Time.deltaTime;
         
-        if (timeCount > 5) { 
+        if (timeCount > 5 && isSpawning == true) { 
             RandomPosition pos = this.gameObject.GetComponent<RandomPosition>();
             for (int i = difficultyJelly; i > 0; i--) {
                 Vector3 randomPosition = pos.getRandomPosition();
@@ -34,7 +39,7 @@ public class Spawner : MonoBehaviour {
             timeCount -= 5;
 
             difficultyUpdated++;
-            if (difficultyUpdated % 7 == 0)
+            if (difficultyUpdated % 6 == 0)
             {
                 difficultyJelly++;
             }
